@@ -1,4 +1,4 @@
-df-shortcodes_tjoy
+DF Shortcodes for Petsitter
 ==================
 
 Shortcodes for PetSitter WordPress Theme
