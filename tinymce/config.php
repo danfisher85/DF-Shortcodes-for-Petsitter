@@ -2004,6 +2004,12 @@ $zilla_shortcodes['section'] = array(
 			'desc' => __('Put url to background image.', 'petsitter'),
 			'std' => ''
 		),
+		'bg_color' => array(
+			'type' => 'text',
+			'label' => __('Background Color', 'petsitter'),
+			'desc' => __('Enter your color for the section.', 'petsitter'),
+			'std' => ''
+		),
 		'content' => array(
 			'std' => '',
 			'type' => 'textarea',
@@ -2013,7 +2019,7 @@ $zilla_shortcodes['section'] = array(
 		'overlay' => array(
 			'type' => 'select',
 			'label' => __('Add Overlay?', 'petsitter'),
-			'desc' => __('Adding darken overlay. Use it if section box has background image.', 'petsitter'),
+			'desc' => __('Adding darken overlay. Best looks if section box has some background image.', 'petsitter'),
 			'options' => array(
 				'no' => 'No',
 				'yes' => 'Yes'
@@ -2027,8 +2033,8 @@ $zilla_shortcodes['section'] = array(
 				'95'  => '95%',
 				'85'  => '85%',
 				'75'  => '75%',
-				'50' => '50%',
-				'25' => '25%'
+				'50'  => '50%',
+				'25'  => '25%'
 			)
 		),
 		'overlay_color' => array(
@@ -2043,7 +2049,7 @@ $zilla_shortcodes['section'] = array(
 			)
 		),
 	),
-	'shortcode' => '[section type="{{type}}" class="{{class}}" bg_url="{{bg_url}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"] {{content}} [/section]',
+	'shortcode' => '[section type="{{type}}" class="{{class}}" bg_url="{{bg_url}}" bg_color="{{bg_color}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"] {{content}} [/section]',
 	'popup_title' => __('Insert Section Shortcode', 'petsitter')
 );
 

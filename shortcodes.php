@@ -1051,6 +1051,7 @@ if (!function_exists('section_shortcode')) {
 			array(
 				'type'  => 'section',
 				'bg_url' => '',
+				'bg_color' => '',
 				'class' => '',
 				'overlay' => 'no',
 				'overlay_opacity' => '50',
@@ -1063,9 +1064,14 @@ if (!function_exists('section_shortcode')) {
 			$type = 'section';
 		}
 
-		$section_bg = "";
-		if($bg_url != '') {
+		$section_bg = '';
+
+		if($bg_url != '' && $bg_color != '' ) {
+			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover; background-color:' . $bg_color . '" data-stellar-background-ratio="0.5"';
+		} elseif ( $bg_url != '' && $bg_color == '') {
 			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover;" data-stellar-background-ratio="0.5"';
+		} elseif ( $bg_url == '' && $bg_color != '') {
+			$section_bg = 'style="background-color:' . $bg_color . '"';
 		}
 
 		$output = '<div class="'.$type.' '.$class.' section-overlay__'.$overlay.' section-overlay-color__'.$overlay_color.' section-overlay_opacity-'.$overlay_opacity.'" '.$section_bg.'>';
