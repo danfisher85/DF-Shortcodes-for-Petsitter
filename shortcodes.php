@@ -174,6 +174,7 @@ if (!function_exists('cta_shortcode')) {
 			  'centered' => '',
 			  'fullwidth' => 'no',
 			  'custom_bg_url' => '',
+			  'parallax_ratio' => '0.5',
 			  'overlay' => 'no',
 			  'overlay_opacity' => '50',
 			  'overlay_color' => 'dark',
@@ -183,7 +184,7 @@ if (!function_exists('cta_shortcode')) {
 		$cta_bg  = '';
 
 		if($custom_bg_url != '') {
-			$cta_bg = 'style="background-image:url('.$custom_bg_url.');" data-stellar-background-ratio="0.5"';
+			$cta_bg = 'style="background-image:url('.$custom_bg_url.');" data-stellar-background-ratio="'.$parallax_ratio.'"';
 		}
 
 		if($overlay == 'yes') {
@@ -1051,6 +1052,7 @@ if (!function_exists('section_shortcode')) {
 			array(
 				'type'  => 'section',
 				'bg_url' => '',
+				'parallax_ratio' => '0.5',
 				'bg_color' => '',
 				'class' => '',
 				'overlay' => 'no',
@@ -1067,9 +1069,9 @@ if (!function_exists('section_shortcode')) {
 		$section_bg = '';
 
 		if($bg_url != '' && $bg_color != '' ) {
-			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover; background-color:' . $bg_color . '" data-stellar-background-ratio="0.5"';
+			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover; background-color:' . $bg_color . '" data-stellar-background-ratio="'.$parallax_ratio.'"';
 		} elseif ( $bg_url != '' && $bg_color == '') {
-			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover;" data-stellar-background-ratio="0.5"';
+			$section_bg = 'style="background-image:url('.$bg_url.'); background-repeat: no-repeat; background-position: 50% 0; background-attachment: fixed; background-size: cover;" data-stellar-background-ratio="'.$parallax_ratio.'"';
 		} elseif ( $bg_url == '' && $bg_color != '') {
 			$section_bg = 'style="background-color:' . $bg_color . '"';
 		}

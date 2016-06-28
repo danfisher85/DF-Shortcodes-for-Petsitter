@@ -1525,6 +1525,12 @@ $zilla_shortcodes['cta'] = array(
 			'label' => __('Background URL', 'petsitter'),
 			'desc' => __('Add url to you custom background image', 'petsitter'),
 		),
+		'parallax_ratio' => array(
+			'std' => '0.5',
+			'type' => 'text',
+			'label' => __('Parallax Ratio', 'petsitter'),
+			'desc' => __('Enter the number if you want to reposition background image on scroll, e.g 0.5 The ratio is relative to the natural scroll speed.', 'petsitter'),
+		),
 		'fullwidth' => array(
 			'type' => 'select',
 			'label' => __('Full width', 'petsitter'),
@@ -1567,7 +1573,7 @@ $zilla_shortcodes['cta'] = array(
 			)
 		),
 	),
-	'shortcode' => '[cta title="{{title}}" subtitle="{{subtitle}}" btn_txt="{{btn_txt}}" btn_url="{{btn_url}}" btn_class="{{btn_class}}" centered="{{centered}}" custom_bg_url="{{custom_bg_url}}" fullwidth="{{fullwidth}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"]',
+	'shortcode' => '[cta title="{{title}}" subtitle="{{subtitle}}" btn_txt="{{btn_txt}}" btn_url="{{btn_url}}" btn_class="{{btn_class}}" centered="{{centered}}" custom_bg_url="{{custom_bg_url}}" parallax_ratio="{{parallax_ratio}}" fullwidth="{{fullwidth}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"]',
 	'popup_title' => __('Insert Call to Action Shortcode', 'petsitter')
 );
 
@@ -2004,6 +2010,12 @@ $zilla_shortcodes['section'] = array(
 			'desc' => __('Put url to background image.', 'petsitter'),
 			'std' => ''
 		),
+		'parallax_ratio' => array(
+			'std' => '0.5',
+			'type' => 'text',
+			'label' => __('Parallax Ratio', 'petsitter'),
+			'desc' => __('Enter the number if you want to reposition background image on scroll, e.g 0.5 The ratio is relative to the natural scroll speed.', 'petsitter'),
+		),
 		'bg_color' => array(
 			'type' => 'text',
 			'label' => __('Background Color', 'petsitter'),
@@ -2049,7 +2061,7 @@ $zilla_shortcodes['section'] = array(
 			)
 		),
 	),
-	'shortcode' => '[section type="{{type}}" class="{{class}}" bg_url="{{bg_url}}" bg_color="{{bg_color}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"] {{content}} [/section]',
+	'shortcode' => '[section type="{{type}}" class="{{class}}" bg_url="{{bg_url}}" parallax_ratio="{{parallax_ratio}}" bg_color="{{bg_color}}" overlay="{{overlay}}" overlay_opacity="{{overlay_opacity}}" overlay_color="{{overlay_color}}"] {{content}} [/section]',
 	'popup_title' => __('Insert Section Shortcode', 'petsitter')
 );
 
