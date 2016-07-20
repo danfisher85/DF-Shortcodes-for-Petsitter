@@ -3,7 +3,7 @@
 Plugin Name:       DF Shortcodes for PetSitter
 Plugin URI:        http://themeforest.net/user/dan_fisher
 Description:       A simple shortcode generator. Add buttons, columns, tabs, toggles and alerts to your theme.
-Version:           1.5.1
+Version:           1.5.2
 Author:            dan_fisher
 Author URI:        http://themeforest.net/user/dan_fisher
 Text Domain:       df-shortcodes_petsitter-master

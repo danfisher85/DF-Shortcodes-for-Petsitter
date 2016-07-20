@@ -1670,6 +1670,7 @@ if (!function_exists('jobs_feed_shortcode')) {
 				'num'     => '4',
 				'cols'    => '4',
 				'orderby' => 'date',
+				'categories' => '',
 				'featured' => null
 		), $atts));
 
@@ -1686,6 +1687,8 @@ if (!function_exists('jobs_feed_shortcode')) {
 		// Check if Resume Manager is installed
 		if (class_exists( 'WP_Job_Manager' )) {
 
+			$categories = is_array( $categories ) ? $categories : array_filter( array_map( 'trim', explode( ',', $categories ) ) );
+
 			if ( ! is_null( $featured ) ) {
 				$featured = ( is_bool( $featured ) && $featured ) || in_array( $featured, array( '1', 'true', 'yes' ) ) ? true : false;
 			}
@@ -1697,7 +1700,8 @@ if (!function_exists('jobs_feed_shortcode')) {
 				'post_type'      => 'job_listing',
 				'post_status'    => 'publish',
 				'posts_per_page' => $num,
-				'orderby'        => $orderby
+				'orderby'        => $orderby,
+				'search_categories' => $categories
 			);
 
 			if ( $orderby != 'rand' ) {
@@ -1958,6 +1962,7 @@ if (!function_exists('resumes_feed_shortcode')) {
 				'num'      => '4',
 				'cols'     => '4',
 				'orderby'  => 'date',
+				'categories' => '',
 				'featured' => null
 		), $atts));
 
@@ -1986,12 +1991,15 @@ if (!function_exists('resumes_feed_shortcode')) {
 				$featured = ( is_bool( $featured ) && $featured ) || in_array( $featured, array( '1', 'true', 'yes' ) ) ? true : false;
 			}
 
+			$categories = array_filter( array_map( 'trim', explode( ',', $categories ) ) );
+
 			$args = array(
-				'featured'       => $featured,
-				'post_type'      => 'resume',
-				'post_status'    => 'publish',
-				'posts_per_page' => $num,
-				'orderby'        => $orderby
+				'featured'          => $featured,
+				'post_type'         => 'resume',
+				'post_status'       => 'publish',
+				'posts_per_page'    => $num,
+				'orderby'           => $orderby,
+				'search_categories' => $categories,
 			);
 
 			if ( $orderby != 'rand' ) {
